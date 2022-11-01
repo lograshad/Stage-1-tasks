@@ -1,0 +1,50 @@
+.header-container {
+    padding: 3rem 0rem;
+}
+.profile-img-wrapper {
+    width: 88px;
+    height: 88px;
+    margin: auto;
+    position: relative;
+    overflow: hidden; 
+    border-radius: 50%;
+}
+.profile-img-wrapper::after {
+    content: url(../Images/camera.png);
+    position: absolute;
+    z-index: 1;
+    bottom: -35%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 300ms;
+}
+.profile-img-wrapper:hover {
+    background: linear-gradient(0deg, rgba(52, 64, 84, 0.75), rgba(52, 64, 84, 0.75));
+}
+.profile-img-wrapper:hover::after,
+.profile-img-wrapper:active::after{
+    bottom: 10%;
+    transition: bottom 300ms;
+}
+.profile-img-wrapper:focus::after{
+    bottom: -35%;
+    transition: bottom 300ms;
+}
+.profile-img-wrapper img:nth-child(1) {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute; 
+    z-index: -1;
+}
+.header-container h2{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 28px;
+text-align: center;
+color: var(--text-color);
+}
+#slack {
+    visibility: hidden;
+}

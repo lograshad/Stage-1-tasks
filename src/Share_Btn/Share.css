@@ -1,0 +1,91 @@
+.share-container {
+    position: absolute;
+    top: 2rem;
+    right: 20vw;
+}
+.share-container img {
+    border: 1px dashed #98A2B3;
+    border-radius: 50%;
+    padding: 1em;
+    position: relative;
+    z-index: 2;
+}
+.share-container img:hover {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(23%) saturate(398%) hue-rotate(182deg) brightness(91%) contrast(82%);
+}
+.share-container::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90%;
+}
+.share-container:hover::before {
+    background-color: rgb(208, 213, 221, .2);
+}
+.share-container::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 90%;
+    transform: scale(1.25);
+    top: 0;
+    left: 0;
+}
+.share-container:active::after {
+    border: 5px solid rgb(208, 213, 221, .2);
+}
+.share-container:focus::after {
+    border: 5px solid rgb(208, 213, 221, .2);
+}
+.share-container:active::before {
+    background-color: white;
+}
+.share-container2 {
+    position: relative;
+    z-index: 5;
+}
+.share-container2::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: -3.8em;
+    top: -5%;
+    background-color: #101828;
+    color: white;
+    width: max-content;
+    font-size: .8em;
+    font-weight: 600;
+    padding: .7em .3em;
+    border-radius: 4px;
+    transform: scale(0);
+    transform-origin: right center;
+}
+.share-container2:hover::before {
+    transform: scale(1) translateX(-50%);
+    transition: 200ms;
+    transition-delay: 500ms;
+}
+.share-container2::after {
+    content: '';
+    border:  10px solid transparent;
+    position: absolute;
+    border-top-color: #101828;
+    left: -.9em;
+    top: 25%;
+    transform: translateX(-50%) scale(0) rotateZ(270deg);
+    transform-origin: top center;
+}
+.share-container2:hover:after {
+    transform: translateX(-50%) scale(1) rotateZ(270deg);
+    transition: 200ms;
+    transition-delay: 500ms;
+}
+@media (max-width: 700px) {
+    .share-container {
+        visibility: hidden;
+    }
+}
